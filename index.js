@@ -41,7 +41,8 @@ const start = () => {
 		}
 		if (text === '/info') {
 			await bot.sendMessage(chatId, msg.from.first_name)
-			return bot.sendMessage(chatId, 'Your name is ${msg.from.first_name}');
+			await bot.sendMessage(chatId, 'Your name is ' + msg.from.first_name);
+			return bot.sendMessage(chatId, 'Your username is @' + msg.from.username);
 		}
 		if (text === '/game') {
 			return startGame(chatId);
@@ -63,16 +64,15 @@ const start = () => {
 		if (data == '/again') {
 			return startGame(chatId)
 		}
-		if (data === chats[chatId]) {
+		if (data == chats[chatId]) {
 			await bot.sendMessage(chatId, chats[chatId])
 			return bot.sendMessage(chatId, "Congratulations! You are lucky today :)", againOptions)
 		} else {
-			await bot.sendMessage(chatId, chats[chatId])
+			await bot.sendMessage(chatId, 'You have chosen: ' + data)
+			await bot.sendMessage(chatId, 'Bot made a number: ' + chats[chatId])
 			return bot.sendMessage(chatId, "You missed. Try again! :)", againOptions)
 		}
 
-		//await bot.sendMessage(chatId, "You've chosen: ${data}")
-		//return bot.sendMessage(chatId, data)
 	})
 
 
