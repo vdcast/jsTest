@@ -4,6 +4,8 @@ const {gameOptions, againOptions} = require('./options')
 
 //const sequelize = require('./db');
 
+import { Sequelize, Model, DataTypes } from 'sequelize'
+
 const sequelize = new Sequelize('mydb', 'mydbuser', 'pass', {
   host: 'localhost',
   port: '5432',
