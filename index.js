@@ -2,6 +2,8 @@ const TelegramApi = require('node-telegram-bot-api')
 
 const {gameOptions, againOptions} = require('./options')
 
+const sequelize = require('./db');
+
 const token = '5579772730:AAGqlcg5oy9bfCQC5cSQt4PztKtHljSonoU'
 
 const bot = new TelegramApi(token, {polling: true})
@@ -20,7 +22,16 @@ const startGame = async (chatId) => {
 }
 
 
-const start = () => {
+const start = async () => {
+
+
+	try {
+		await sequelize.authenticate()
+		await sequelize.sync()
+	} catch (e) {
+		console.log("CONNecting to database disconnected failed.")
+	}
+
 
 	bot.setMyCommands([
 		{command: '/start', description: "Welcome message"},
