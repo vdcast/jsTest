@@ -2,7 +2,14 @@ const TelegramApi = require('node-telegram-bot-api')
 
 const {gameOptions, againOptions} = require('./options')
 
-const sequelize = require('./db');
+//const sequelize = require('./db');
+
+const sequelize = new Sequelize('mydb', 'mydbuser', 'pass', {
+  'localhost',
+  '5432',
+  dialect: 'postgres',
+  logging: false
+})
 
 const token = '5579772730:AAGqlcg5oy9bfCQC5cSQt4PztKtHljSonoU'
 
