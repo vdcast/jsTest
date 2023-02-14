@@ -23,7 +23,7 @@ const chats = {}
 
 
 const startGame = async (chatId) => {
-	await bot.sendMessage (chatId, 'Now I will think of number and you need to guess it. Good luck! :)');
+	await bot.sendMessage (chatId, 'Now I will think of digit (0-9) and you need to guess it. Good luck! :)');
 	const randomNumber = Math.floor(Math.random() * 10)
 	chats[chatId] = randomNumber;
 		
