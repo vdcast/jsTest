@@ -4,14 +4,14 @@ const {gameOptions, againOptions} = require('./options')
 
 //const sequelize = require('./db');
 
-import { Sequelize, Model, DataTypes } from 'sequelize'
+//import { Sequelize, Model, DataTypes } from 'sequelize'
 
-const sequelize = new Sequelize('mydb', 'mydbuser', 'pass', {
-  host: 'localhost',
-  port: '5432',
-  dialect: 'postgres',
-  logging: false
-})
+//const sequelize = new Sequelize('mydb', 'mydbuser', 'pass', {
+//  host: 'localhost',
+//  port: '5432',
+//  dialect: 'postgres',
+//  logging: false
+//})
 
 const token = '5579772730:AAGqlcg5oy9bfCQC5cSQt4PztKtHljSonoU'
 
