@@ -13,7 +13,8 @@ const {gameOptions, againOptions} = require('./options')
 //  logging: false
 //})
 
-const token = '5579772730:AAGqlcg5oy9bfCQC5cSQt4PztKtHljSonoU'
+// TOKEN ADD
+const token = 'TOKEN'
 
 const bot = new TelegramApi(token, {polling: true})
 
@@ -23,7 +24,7 @@ const chats = {}
 
 
 const startGame = async (chatId) => {
-	await bot.sendMessage (chatId, 'Now I will think of number and you need to guess it. Good luck! :)');
+	await bot.sendMessage (chatId, 'Now I will think of digit (0-9) and you need to guess it. Good luck! :)');
 	const randomNumber = Math.floor(Math.random() * 10)
 	chats[chatId] = randomNumber;
 		
@@ -34,12 +35,12 @@ const startGame = async (chatId) => {
 const start = async () => {
 
 
-	try {
-		await sequelize.authenticate()
-		await sequelize.sync()
-	} catch (e) {
-		console.log("CONNecting to database disconnected failed.")
-	}
+//	try {
+//		await sequelize.authenticate()
+//		await sequelize.sync()
+//	} catch (e) {
+//		console.log("CONNecting to database disconnected failed.")
+//	}
 
 
 	bot.setMyCommands([
